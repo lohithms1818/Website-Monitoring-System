@@ -11,16 +11,26 @@ A simple real-time website monitoring system built with Laravel and Vue 3.
 ## How to run
 1. Clone the project.
 2. Run `composer install` and `npm install`.
-3. Set up your `.env` with SQLite database and SMTP settings.
-4. Run migrations and seeders:
+3. Create your `.env` file by copying the `.env.example`.
+4. Configure your SMTP settings in `.env` using **Mailtrap** for email testing:
+   ```env
+   MAIL_MAILER=smtp
+   MAIL_HOST=sandbox.smtp.mailtrap.io
+   MAIL_PORT=2525
+   MAIL_USERNAME=your_mailtrap_username
+   MAIL_PASSWORD=your_mailtrap_password
+   MAIL_ENCRYPTION=tls
+   MAIL_FROM_ADDRESS="do-not-reply@example.com"
+   ```
+5. Run migrations and seeders:
    ```bash
    php artisan migrate --seed
    ```
-5. Build the assets:
+6. Build the assets:
    ```bash
    npm run build
    ```
-6. Start the server:
+7. Start the server:
    ```bash
    composer run dev
    ```
