@@ -84,7 +84,6 @@ const app = createApp({
 					<p class="list-heading">Monitored Websites</p>
 					<div class="grid-container">
 						<div v-for="website in selectedWebsites" :key="website.id" class="website-row">
-							<!-- URL -->
 							<a href="#" class="website-url" @click.prevent="openWebsite(website.url)">
 								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;">
 									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -94,7 +93,6 @@ const app = createApp({
 								{{ website.url }}
 							</a>
 
-							<!-- Status Badge -->
 							<div>
 								<span :class="['badge', 'badge-' + website.status]">
 									<span class="badge-dot"></span>
@@ -102,7 +100,6 @@ const app = createApp({
 								</span>
 							</div>
 
-							<!-- Latency -->
 							<div class="latency-info">
 								<span v-if="website.latency_ms !== null">
 									Response: <span :class="['latency-value', getLatencyClass(website.latency_ms)]">{{ website.latency_ms }} ms</span>
@@ -110,7 +107,6 @@ const app = createApp({
 								<span v-else class="latency-value" style="color: var(--text-muted);">-- ms</span>
 							</div>
 
-							<!-- Last Checked Timestamp -->
 							<div class="timestamp">
 								Checked: {{ formatTime(website.last_checked_at) }}
 							</div>
@@ -122,7 +118,6 @@ const app = createApp({
 				</div>
 			</section>
 
-			<!-- Confirm Dialog Modal -->
 			<div v-if="modalOpen" class="modal-backdrop" @click="closeModal">
 				<div class="modal-card" @click.stop>
 					<h3 class="modal-title">Confirm Navigation</h3>
