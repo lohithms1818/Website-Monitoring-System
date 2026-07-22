@@ -17,10 +17,15 @@ class ClientWebsiteSeeder extends Seeder
 
         $urls = [
             'https://www.google.com',
-            'https://www.github.com',
             'https://www.stackoverflow.com',
-            'https://invalid-nonexistent-domain-test-12345.local',
-            'https://this-website-does-not-exist-fake.test',
+            'https://www.youtube.com',
+            'https://www.amazon.com',
+            'https://www.reddit.com',
+            'https://www.github.com',
+            'https://www.apple.com',
+            'https://thisiscompletelyfake.com',
+            'https://notarealwebsite.com',
+            'https://totallymadeup.com',
         ];
 
         foreach ($urls as $url) {

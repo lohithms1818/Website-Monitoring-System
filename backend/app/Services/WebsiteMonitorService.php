@@ -47,7 +47,13 @@ class WebsiteMonitorService
         }
 
         if ($previousStatus !== 'down' && $website->fresh()->status === 'down') {
-            Mail::to($website->client->email)->send(new WebsiteDownMail($website));
+            try {
+                Mail::to($website->client->email)->send(new WebsiteDownMail($website));
+                sleep(5); // Sleep 5s to prevent hitting SMTP rate limits (like Mailtrap 550)
+            } catch (\Throwable $mailException) {
+                // Log the mail exception so the monitoring loop isn't broken
+                logger()->error("Failed to send email for {$website->url}: " . $mailException->getMessage());
+            }
         }
     }
 }
