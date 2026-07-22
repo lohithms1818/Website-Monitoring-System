@@ -114,11 +114,6 @@ const app = createApp({
 							<div class="timestamp">
 								Checked: {{ formatTime(website.last_checked_at) }}
 							</div>
-
-							<!-- Error Details (Only visible if down and error is present) -->
-							<div v-if="website.status === 'down' && website.last_error" class="error-row">
-								<strong>Outage Detail:</strong> {{ website.last_error }}
-							</div>
 						</div>
 					</div>
 				</div>
