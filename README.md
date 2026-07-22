@@ -2,6 +2,18 @@
 
 A simple real-time website monitoring system built with Laravel and Vue 3.
 
+## Preview
+
+### Client Dashboard UI
+A clean, minimal serif interface allowing users to select client emails and view real-time monitored website latency, status tags, and last checked timestamps:
+
+![Client Uptime Dashboard](screenshots/dashboard.png)
+
+### Email Notifications
+Automatically captures website down events and sends alerts to the configured client:
+
+![Mailtrap Alerts Inbox](screenshots/mailtrap_inbox.png)
+
 ## Features
 - Manually configure clients and their target websites.
 - Checks website uptime every 15 minutes.
