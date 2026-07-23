@@ -52,3 +52,7 @@ To run the monitoring process in the background on Windows, open PowerShell as a
 ```powershell
 powershell -ExecutionPolicy Bypass -File setup-scheduler.ps1
 ```
+
+## Contributors
+- [lohithms1818](https://github.com/lohithms1818)
+
